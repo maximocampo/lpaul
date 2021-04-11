@@ -9,6 +9,7 @@ import spoti from '../Asset 18.png'
 import face from '../Asset 8.png'
 import insta from '../cI6PSn.tif.png'
 import utube from '../CkCpLw.tif.png'
+import {useWindowSize} from "../hooks/useWindowSize";
 
 function ContextAwareToggle({ children, eventKey, callback }) {
   const currentEventKey = useContext(AccordionContext);
@@ -32,7 +33,9 @@ function ContextAwareToggle({ children, eventKey, callback }) {
 
 
 const App = () => {
-  const [selected, setSelected] = useState(3)
+    const {width} = useWindowSize()
+    
+    const [selected, setSelected] = useState(3)
   
   useEffect(() => import('@iframely/embed.js'),[])
   
@@ -43,14 +46,14 @@ const App = () => {
        <Accordion.Collapse eventKey="0">
          <>
            <p style={{color: '#efb55b', textAlign: 'justify'}}>
-             From his debut EP <a href="">Outis</a> (Daruma Records, 2017),
+             From his debut EP <a href="https://open.spotify.com/album/7DEVoxrS8fzx7WjQzJkEE5?si=5vkn_AZNR_69gtgMPG-lwg">Outis</a> (Daruma Records, 2017),
              released just right after hitting the 20-year-old
              mark, L. Paul has been grinding in the Catalan and
              European underground with his bittersween pop.
            </p>
            <br/>
            <div style={{margin: 10, display: 'flex', justifyContent: 'center'}}>
-            <img src={cara} alt="" style={{width:'100%', maxWidth: 500}}/>
+            <img src={cara} alt="" style={{width: width /100 * 80, maxWidth: 500, height: (width /100 * 80) /1.5, maxHeight: 350}}/>
            </div>
            <br/>
            <p style={{color: '#efb55b', textAlign: 'justify'}}>
@@ -61,11 +64,11 @@ const App = () => {
            </p>
              <br/>
              <div style={{margin: 10, display: 'flex', justifyContent: 'center'}}>
-               <img src={mixer} alt="" style={{width:'100%', maxWidth: 500}}/>
+               <img src={mixer} alt="" style={{width: width /100 * 80, maxWidth: 500, height: (width /100 * 80) * 1.5, maxHeight: 750}}/>
              </div>
              <br/>
            <p style={{color: '#efb55b', textAlign: 'justify'}}>
-             His last work is <a href="">Nen & The Flying Fishes </a>
+             His last work is <a href="https://open.spotify.com/album/46ClUp6lzFrjdJSOlUsuK0?si=57byciSTQCO9yXY5ms6nKw">Nen & The Flying Fishes </a>
              (collectic, 2021), a mixtape where the lyricist producer
              dabbles in hyperpop and the hardest hip-hop, though still
              maintaining the ambient aesthetic he is known for.
@@ -75,9 +78,9 @@ const App = () => {
        <ContextAwareToggle eventKey="1">contact</ContextAwareToggle>
        <Accordion.Collapse eventKey="1">
          <p style={{wordBreak: 'break-word', color: '#efb55b'}}>
-           booking: <a href="">info@americansinsicily.com</a>
+           booking: <a href="mailto:info@americansinsicily.com">info@americansinsicily.com</a>
            <br/>
-           projects: <a href="">lpaulmusic@gmail.com</a>
+           projects: <a href="mailto:lpaulmusic@gmail.com">lpaulmusic@gmail.com</a>
          </p>
        </Accordion.Collapse>
        <ContextAwareToggle eventKey="2">music</ContextAwareToggle>
@@ -104,7 +107,7 @@ const App = () => {
            right: 0,
              padding: 10,
              margin: 5,
-             width: 300,
+             width: 200,
            display: 'flex',
              alignItems: 'center',
            justifyContent: 'space-between',
@@ -113,16 +116,16 @@ const App = () => {
              border: '3px #f18740 solid'
          }}>
          <a href="https://open.spotify.com/artist/5oCkqdXSBLQfj4d7IPJHmq?si=8Sl2cNcZRmK6Jfoa2MlNVg">
-             <img src={spoti} style={{height: 40}} alt=""/>
+             <img src={spoti} style={{height: 30}} alt=""/>
          </a>
          <a href="https://www.instagram.com/lp4ul/">
-             <img src={insta} style={{height: 40}} alt=""/>
+             <img src={insta} style={{height: 30}} alt=""/>
          </a>
          <a href="https://www.youtube.com/channel/UCLWomIIYT8cQrgBnkc6aVyA">
-             <img src={utube} style={{height: 30}} alt=""/>
+             <img src={utube} style={{height: 25}} alt=""/>
          </a>
          <a href="https://www.facebook.com/coooonga">
-             <img src={face} style={{height: 40}} alt=""/>
+             <img src={face} style={{height: 30}} alt=""/>
          </a>
      </div>
    </div>

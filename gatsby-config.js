@@ -11,15 +11,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `waxiwo`,
-        short_name: `waxiwo`,
+        name: `lp4ul`,
+        short_name: `lp4ul`,
         start_url: `/`,
         icon: `src/hand.svg`, // This path is relative to the root of the site.
       },
     }
   ],
   siteMetadata: {
-    title: "WAXIWO",
+    title: "lp4ul",
     author: "Maximo Campo",
   },
   
